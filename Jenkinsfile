@@ -13,7 +13,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    docker.build('spring:lts')
+                    docker.build('ankitchauhan18/spring/spring:lts')
                 }
             }
         }
