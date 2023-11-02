@@ -4,7 +4,7 @@ pipeline {
         stage('Pull Docker Image') {
             steps {
                 script {
-                    def dockerImage = docker.image('ankitchauhan18/spring/spring:lts')
+                    def dockerImage = docker.image('spring/spring:lts')
                     dockerImage.pull()
                 }
             }
