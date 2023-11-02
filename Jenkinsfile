@@ -3,7 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+               script {
+                    def mavenHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                    def mavenExec = "${mavenHome}/bin/mvn"
+                    sh "${mavenExec} clean package"
+                }
             }
         }
         stage('Docker Build') {
